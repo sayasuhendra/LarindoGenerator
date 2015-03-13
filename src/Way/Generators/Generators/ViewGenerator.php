@@ -57,7 +57,7 @@ class ViewGenerator extends Generator {
         // And finally create the table rows
         list($headings, $fields, $editAndDeleteLinks, $showdata) = $this->makeTableRows($model);
         $this->template = str_replace('{{headings}}', implode(PHP_EOL."\t\t\t\t", $headings), $this->template);
-        $this->template = str_replace('{{showdata}}', implode(PHP_EOL."\t\t\t\t", $showdata) . PHP_EOL . $editAndDeleteLinks, $this->template);
+        $this->template = str_replace('{{showdata}}', implode(PHP_EOL."\t\t\t\t", $showdata), $this->template);
         $this->template = str_replace('{{fields}}', implode(PHP_EOL."\t\t\t\t\t", $fields) . PHP_EOL . $editAndDeleteLinks, $this->template);
 
         return $this->template;
